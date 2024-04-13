@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        function isIPv4Address(inputString) {
+    const pjeset = inputString.split('.');
+    
+        if (pjeset.length !== 4) {
+            return false;
+        }
+        
+        for (let pjes of pjeset) {
+            if (!isDigit(pjes) || !isInRange(pjes, 0, 255)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    function isDigit(str) {
+        return /^\d+$/.test(str);
+    }
+    function isInRange(num, min, max) {
+        return parseInt(num)>=min&&parseInt(num) <= max;
+    }
+
+    console.log(isIPv4Address("172.16.254.1"));  
+    console.log(isIPv4Address("172.316.254.1")); 
+    console.log(isIPv4Address(".254.255.1"));  
+    </script>
+
+</body>
+</html>

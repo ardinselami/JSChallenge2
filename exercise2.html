@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function addBorder(picture) {
+        const width = picture[0].length + 2;
+        const border = '*'.repeat(width); 
+
+        picture.unshift(border);
+
+        for (let i = 1; i < picture.length - 1; i++) {
+            picture[i] = `*${picture[i]}*`;
+        }
+
+        picture.push(border);
+
+        return picture;
+    }
+
+
+        const picture = ["abc", "ded"];
+        console.log(addBorder(picture));
+        </script>
+</body>
+</html>
